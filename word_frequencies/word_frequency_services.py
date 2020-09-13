@@ -2,6 +2,7 @@ import logging
 import os
 import re
 import ssl
+from statistics import mean, median
 
 import nltk
 import requests
@@ -15,6 +16,7 @@ if (not os.environ.get('PYTHONHTTPSVERIFY', '') and
 nltk.download('wordnet')
 nltk.download('stopwords')
 lemmatizer = WordNetLemmatizer()
+
 
 logger = logging.getLogger(__name__)
 stop_words = stopwords.words('english')
@@ -36,6 +38,9 @@ def extract_word_frequencies(words: list) -> dict:
             frequencies[word] += 1
         else:
             frequencies[word] = 1
+
+    logger.info("mean frequency is: {}".format(mean(frequencies.values())))
+    logger.info("median frequency is: {}".format(median(frequencies.values())))
     return dict(sorted(frequencies.items(), key=lambda item: item[1], reverse=True))
 
 
