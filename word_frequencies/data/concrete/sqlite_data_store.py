@@ -1,7 +1,7 @@
 import logging
 import sqlite3
 from sqlite3 import Error
-from word_frequencies.word_count import WordFrequencyStore
+from word_frequencies.data.contract.word_frequency_store import WordFrequencyStore
 
 logger = logging.getLogger(__name__)
 
