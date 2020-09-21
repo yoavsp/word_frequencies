@@ -6,3 +6,6 @@ class WordFrequencyStore(ABC):
     def save(self, frequencies: list) -> None:
         pass
 
+    @abstractmethod
+    def getWordCount(self, word) -> int:
+        pass
