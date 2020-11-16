@@ -5,7 +5,7 @@ The app collects The top k frequent words and saves them into a csv file and a S
 In each line the first element is the word (string) and the second is the count.  for example (for k=3):
 
 | Word  | Count       | 
-|-------|-------------|
+|:-----:|:-----------:|
 | word1 | word1_count |
 | word2 | word2_count |
 | word3 | word3_count | 
